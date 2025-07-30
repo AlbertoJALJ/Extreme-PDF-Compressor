@@ -3,7 +3,7 @@ from PIL import Image
 import os
 import subprocess
 
-def convertir_paginas_a_imagenes(pdf_path, dpi=35, calidad_jpeg=15):
+def convertir_paginas_a_imagenes(pdf_path, dpi=40, calidad_jpeg=20):
     doc = fitz.open(pdf_path)
     img_paths = []
 
@@ -29,13 +29,13 @@ def comprimir_con_ghostscript(entrada, salida):
         "gs",
         "-sDEVICE=pdfwrite",
         "-dCompatibilityLevel=1.4",
-        "-dPDFSETTINGS=/screen",
+        "-dPDFSETTINGS=/ebook",
         "-dColorImageDownsampleType=/Bicubic",
-        "-dColorImageResolution=36",
+        "-dColorImageResolution=72",
         "-dGrayImageDownsampleType=/Bicubic",
-        "-dGrayImageResolution=36",
+        "-dGrayImageResolution=72",
         "-dMonoImageDownsampleType=/Subsample",
-        "-dMonoImageResolution=36",
+        "-dMonoImageResolution=72",
         "-dNOPAUSE",
         "-dQUIET",
         "-dBATCH",
