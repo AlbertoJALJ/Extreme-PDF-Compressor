@@ -61,7 +61,7 @@ Download and install from: https://www.ghostscript.com/download.html
 ## 🚀 Usage
 
 ```bash
-python comprimir_pdf_ultra.py your_file.pdf
+python main.py your_file.pdf
 ```
 
 The output will be a file called:
